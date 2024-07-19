@@ -1,0 +1,9 @@
+{
+    "materials": [
+        { "name": "Acero", "properties": { "density": 7850, "elastic_modulus": 210 } },
+        { "name": "Aluminio", "properties": { "density": 2700, "elastic_modulus": 70 } },
+        { "name": "Cobre", "properties": { "density": 8960, "elastic_modulus": 110 } },
+        { "name": "Hierro Fundido", "properties": { "density": 7200, "elastic_modulus": 120 } },
+        { "name": "Titanio", "properties": { "density": 4500, "elastic_modulus": 116 } }
+    ]
+}
