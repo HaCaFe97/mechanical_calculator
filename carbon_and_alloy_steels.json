@@ -1,0 +1,578 @@
+{
+  "carbon_and_alloy_steels": [
+    {
+      "sae_number": "1020",
+      "condition": "Hot-rolled",
+      "tensile_strength": {
+        "ksi": 55,
+        "mpa": 379
+      },
+      "yield_strength": {
+        "ksi": 30,
+        "mpa": 207
+      },
+      "ductility_percent_elongation_2in": 12,
+      "brinell_hardness_hb": 111
+    },
+    {
+      "sae_number": "1020",
+      "condition": "Cold-drawn",
+      "tensile_strength": {
+        "ksi": 61,
+        "mpa": 420
+      },
+      "yield_strength": {
+        "ksi": 51,
+        "mpa": 352
+      },
+      "ductility_percent_elongation_2in": 15,
+      "brinell_hardness_hb": 122
+    },
+    {
+      "sae_number": "1020",
+      "condition": "Annealed",
+      "tensile_strength": {
+        "ksi": 60,
+        "mpa": 414
+      },
+      "yield_strength": {
+        "ksi": 43,
+        "mpa": 296
+      },
+      "ductility_percent_elongation_2in": 38,
+      "brinell_hardness_hb": 121
+    },
+    {
+      "sae_number": "1040",
+      "condition": "Hot-rolled",
+      "tensile_strength": {
+        "ksi": 72,
+        "mpa": 496
+      },
+      "yield_strength": {
+        "ksi": 42,
+        "mpa": 290
+      },
+      "ductility_percent_elongation_2in": 18,
+      "brinell_hardness_hb": 144
+    },
+    {
+      "sae_number": "1040",
+      "condition": "Cold-drawn",
+      "tensile_strength": {
+        "ksi": 80,
+        "mpa": 552
+      },
+      "yield_strength": {
+        "ksi": 71,
+        "mpa": 490
+      },
+      "ductility_percent_elongation_2in": 12,
+      "brinell_hardness_hb": 160
+    },
+    {
+      "sae_number": "1040",
+      "condition": "QOT 1300",
+      "tensile_strength": {
+        "ksi": 88,
+        "mpa": 607
+      },
+      "yield_strength": {
+        "ksi": 61,
+        "mpa": 421
+      },
+      "ductility_percent_elongation_2in": 33,
+      "brinell_hardness_hb": 183
+    },
+    {
+      "sae_number": "1040",
+      "condition": "QOT 400",
+      "tensile_strength": {
+        "ksi": 113,
+        "mpa": 779
+      },
+      "yield_strength": {
+        "ksi": 87,
+        "mpa": 600
+      },
+      "ductility_percent_elongation_2in": 19,
+      "brinell_hardness_hb": 262
+    },
+    {
+      "sae_number": "1050",
+      "condition": "Hot-rolled",
+      "tensile_strength": {
+        "ksi": 90,
+        "mpa": 620
+      },
+      "yield_strength": {
+        "ksi": 49,
+        "mpa": 338
+      },
+      "ductility_percent_elongation_2in": 15,
+      "brinell_hardness_hb": 180
+    },
+    {
+      "sae_number": "1050",
+      "condition": "Cold-drawn",
+      "tensile_strength": {
+        "ksi": 100,
+        "mpa": 690
+      },
+      "yield_strength": {
+        "ksi": 84,
+        "mpa": 579
+      },
+      "ductility_percent_elongation_2in": 10,
+      "brinell_hardness_hb": 200
+    },
+    {
+      "sae_number": "1050",
+      "condition": "QOT 1300",
+      "tensile_strength": {
+        "ksi": 96,
+        "mpa": 662
+      },
+      "yield_strength": {
+        "ksi": 61,
+        "mpa": 421
+      },
+      "ductility_percent_elongation_2in": 30,
+      "brinell_hardness_hb": 192
+    },
+    {
+      "sae_number": "1050",
+      "condition": "QOT 400",
+      "tensile_strength": {
+        "ksi": 143,
+        "mpa": 986
+      },
+      "yield_strength": {
+        "ksi": 110,
+        "mpa": 758
+      },
+      "ductility_percent_elongation_2in": 10,
+      "brinell_hardness_hb": 321
+    },
+    {
+      "sae_number": "1117",
+      "condition": "Hot-rolled",
+      "tensile_strength": {
+        "ksi": 65,
+        "mpa": 448
+      },
+      "yield_strength": {
+        "ksi": 40,
+        "mpa": 276
+      },
+      "ductility_percent_elongation_2in": 33,
+      "brinell_hardness_hb": 124
+    },
+    {
+      "sae_number": "1117",
+      "condition": "Cold-drawn",
+      "tensile_strength": {
+        "ksi": 80,
+        "mpa": 552
+      },
+      "yield_strength": {
+        "ksi": 65,
+        "mpa": 448
+      },
+      "ductility_percent_elongation_2in": 20,
+      "brinell_hardness_hb": 138
+    },
+    {
+      "sae_number": "1117",
+      "condition": "WQT 350",
+      "tensile_strength": {
+        "ksi": 89,
+        "mpa": 614
+      },
+      "yield_strength": {
+        "ksi": 50,
+        "mpa": 345
+      },
+      "ductility_percent_elongation_2in": 22,
+      "brinell_hardness_hb": 178
+    },
+    {
+      "sae_number": "1137",
+      "condition": "Hot-rolled",
+      "tensile_strength": {
+        "ksi": 88,
+        "mpa": 607
+      },
+      "yield_strength": {
+        "ksi": 48,
+        "mpa": 331
+      },
+      "ductility_percent_elongation_2in": 15,
+      "brinell_hardness_hb": 176
+    },
+    {
+      "sae_number": "1137",
+      "condition": "Cold-drawn",
+      "tensile_strength": {
+        "ksi": 98,
+        "mpa": 676
+      },
+      "yield_strength": {
+        "ksi": 82,
+        "mpa": 565
+      },
+      "ductility_percent_elongation_2in": 10,
+      "brinell_hardness_hb": 196
+    },
+    {
+      "sae_number": "1137",
+      "condition": "OQT 1300",
+      "tensile_strength": {
+        "ksi": 87,
+        "mpa": 600
+      },
+      "yield_strength": {
+        "ksi": 60,
+        "mpa": 414
+      },
+      "ductility_percent_elongation_2in": 28,
+      "brinell_hardness_hb": 174
+    },
+    {
+      "sae_number": "1137",
+      "condition": "OQT 400",
+      "tensile_strength": {
+        "ksi": 157,
+        "mpa": 1083
+      },
+      "yield_strength": {
+        "ksi": 136,
+        "mpa": 938
+      },
+      "ductility_percent_elongation_2in": 5,
+      "brinell_hardness_hb": 352
+    },
+    {
+      "sae_number": "1144",
+      "condition": "Hot-rolled",
+      "tensile_strength": {
+        "ksi": 94,
+        "mpa": 648
+      },
+      "yield_strength": {
+        "ksi": 51,
+        "mpa": 352
+      },
+      "ductility_percent_elongation_2in": 15,
+      "brinell_hardness_hb": 188
+    },
+    {
+      "sae_number": "1144",
+      "condition": "Cold-drawn",
+      "tensile_strength": {
+        "ksi": 100,
+        "mpa": 690
+      },
+      "yield_strength": {
+        "ksi": 90,
+        "mpa": 621
+      },
+      "ductility_percent_elongation_2in": 10,
+      "brinell_hardness_hb": 200
+    },
+    {
+      "sae_number": "1144",
+      "condition": "OQT 1300",
+      "tensile_strength": {
+        "ksi": 96,
+        "mpa": 662
+      },
+      "yield_strength": {
+        "ksi": 68,
+        "mpa": 469
+      },
+      "ductility_percent_elongation_2in": 25,
+      "brinell_hardness_hb": 200
+    },
+    {
+      "sae_number": "1144",
+      "condition": "OQT 400",
+      "tensile_strength": {
+        "ksi": 127,
+        "mpa": 876
+      },
+      "yield_strength": {
+        "ksi": 91,
+        "mpa": 627
+      },
+      "ductility_percent_elongation_2in": 16,
+      "brinell_hardness_hb": 277
+    },
+    {
+      "sae_number": "1213",
+      "condition": "Hot-rolled",
+      "tensile_strength": {
+        "ksi": 55,
+        "mpa": 379
+      },
+      "yield_strength": {
+        "ksi": 33,
+        "mpa": 228
+      },
+      "ductility_percent_elongation_2in": 25,
+      "brinell_hardness_hb": 110
+    },
+    {
+      "sae_number": "1213",
+      "condition": "Cold-drawn",
+      "tensile_strength": {
+        "ksi": 75,
+        "mpa": 517
+      },
+      "yield_strength": {
+        "ksi": 58,
+        "mpa": 340
+      },
+      "ductility_percent_elongation_2in": 10,
+      "brinell_hardness_hb": 150
+    },
+    {
+      "sae_number": "12L13",
+      "condition": "Hot-rolled",
+      "tensile_strength": {
+        "ksi": 57,
+        "mpa": 393
+      },
+      "yield_strength": {
+        "ksi": 34,
+        "mpa": 234
+      },
+      "ductility_percent_elongation_2in": 22,
+      "brinell_hardness_hb": 114
+    },
+    {
+      "sae_number": "12L13",
+      "condition": "Cold-drawn",
+      "tensile_strength": {
+        "ksi": 70,
+        "mpa": 483
+      },
+      "yield_strength": {
+        "ksi": 60,
+        "mpa": 414
+      },
+      "ductility_percent_elongation_2in": 10,
+      "brinell_hardness_hb": 140
+    },
+    {
+      "sae_number": "1340",
+      "condition": "Annealed",
+      "tensile_strength": {
+        "ksi": 102,
+        "mpa": 703
+      },
+      "yield_strength": {
+        "ksi": 63,
+        "mpa": 434
+      },
+      "ductility_percent_elongation_2in": 26,
+      "brinell_hardness_hb": 207
+    },
+    {
+      "sae_number": "1340",
+      "condition": "OQT 1300",
+      "tensile_strength": {
+        "ksi": 100,
+        "mpa": 690
+      },
+      "yield_strength": {
+        "ksi": 75,
+        "mpa": 517
+      },
+      "ductility_percent_elongation_2in": 25,
+      "brinell_hardness_hb": 235
+    },
+    {
+      "sae_number": "1340",
+      "condition": "OQT 1000",
+      "tensile_strength": {
+        "ksi": 144,
+        "mpa": 993
+      },
+      "yield_strength": {
+        "ksi": 132,
+        "mpa": 910
+      },
+      "ductility_percent_elongation_2in": 17,
+      "brinell_hardness_hb": 363
+    },
+    {
+      "sae_number": "1340",
+      "condition": "OQT 700",
+      "tensile_strength": {
+        "ksi": 221,
+        "mpa": 1520
+      },
+      "yield_strength": {
+        "ksi": 197,
+        "mpa": 1360
+      },
+      "ductility_percent_elongation_2in": 10,
+      "brinell_hardness_hb": 444
+    },
+    {
+      "sae_number": "1340",
+      "condition": "OQT 400",
+      "tensile_strength": {
+        "ksi": 285,
+        "mpa": 1960
+      },
+      "yield_strength": {
+        "ksi": 234,
+        "mpa": 1610
+      },
+      "ductility_percent_elongation_2in": 8,
+      "brinell_hardness_hb": 578
+    },
+    {
+      "sae_number": "3140",
+      "condition": "Annealed",
+      "tensile_strength": {
+        "ksi": 95,
+        "mpa": 655
+      },
+      "yield_strength": {
+        "ksi": 67,
+        "mpa": 462
+      },
+      "ductility_percent_elongation_2in": 25,
+      "brinell_hardness_hb": 187
+    },
+    {
+      "sae_number": "3140",
+      "condition": "QOT 1300",
+      "tensile_strength": {
+        "ksi": 115,
+        "mpa": 792
+      },
+      "yield_strength": {
+        "ksi": 94,
+        "mpa": 648
+      },
+      "ductility_percent_elongation_2in": 23,
+      "brinell_hardness_hb": 233
+    },
+    {
+      "sae_number": "3140",
+      "condition": "QOT 1000",
+      "tensile_strength": {
+        "ksi": 152,
+        "mpa": 1050
+      },
+      "yield_strength": {
+        "ksi": 133,
+        "mpa": 920
+      },
+      "ductility_percent_elongation_2in": 17,
+      "brinell_hardness_hb": 311
+    },
+    {
+      "sae_number": "3140",
+      "condition": "QOT 700",
+      "tensile_strength": {
+        "ksi": 220,
+        "mpa": 1520
+      },
+      "yield_strength": {
+        "ksi": 200,
+        "mpa": 1380
+      },
+      "ductility_percent_elongation_2in": 13,
+      "brinell_hardness_hb": 461
+    },
+    {
+      "sae_number": "3140",
+      "condition": "QOT 400",
+      "tensile_strength": {
+        "ksi": 280,
+        "mpa": 1930
+      },
+      "yield_strength": {
+        "ksi": 248,
+        "mpa": 1710
+      },
+      "ductility_percent_elongation_2in": 11,
+      "brinell_hardness_hb": 555
+    },
+    {
+      "sae_number": "4130",
+      "condition": "Annealed",
+      "tensile_strength": {
+        "ksi": 81,
+        "mpa": 558
+      },
+      "yield_strength": {
+        "ksi": 52,
+        "mpa": 359
+      },
+      "ductility_percent_elongation_2in": 28,
+      "brinell_hardness_hb": 156
+    },
+    {
+      "sae_number": "4130",
+      "condition": "QOT 1300",
+      "tensile_strength": {
+        "ksi": 98,
+        "mpa": 676
+      },
+      "yield_strength": {
+        "ksi": 89,
+        "mpa": 614
+      },
+      "ductility_percent_elongation_2in": 28,
+      "brinell_hardness_hb": 202
+    },
+    {
+      "sae_number": "4130",
+      "condition": "QOT 1000",
+      "tensile_strength": {
+        "ksi": 143,
+        "mpa": 986
+      },
+      "yield_strength": {
+        "ksi": 132,
+        "mpa": 910
+      },
+      "ductility_percent_elongation_2in": 16,
+      "brinell_hardness_hb": 302
+    },
+    {
+      "sae_number": "4130",
+      "condition": "QOT 700",
+      "tensile_strength": {
+        "ksi": 208,
+        "mpa": 1430
+      },
+      "yield_strength": {
+        "ksi": 180,
+        "mpa": 1240
+      },
+      "ductility_percent_elongation_2in": 13,
+      "brinell_hardness_hb": 415
+    },
+    {
+      "sae_number": "4130",
+      "condition": "QOT 400",
+      "tensile_strength": {
+        "ksi": 234,
+        "mpa": 1610
+      },
+      "yield_strength": {
+        "ksi": 197,
+        "mpa": 1360
+      },
+      "ductility_percent_elongation_2in": 12,
+      "brinell_hardness_hb": 461
+    }
+  ]
+}
