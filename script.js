@@ -5,7 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fetch JSON data
     fetch('carbon_and_alloy_steels.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
             const materials = data.carbon_and_alloy_steels;
 
@@ -22,16 +27,21 @@ document.addEventListener('DOMContentLoaded', function() {
             saeSelect.addEventListener('change', function() {
                 const selectedSAE = this.value;
                 conditionSelect.innerHTML = ''; // Clear previous options
-                const conditions = materials
-                    .filter(material => material.sae_number === selectedSAE)
-                    .map(material => material.condition);
+                conditionSelect.disabled = true; // Disable condition select by default
 
-                conditions.forEach(condition => {
-                    const option = document.createElement('option');
-                    option.value = condition;
-                    option.textContent = condition;
-                    conditionSelect.appendChild(option);
-                });
+                const conditions = [...new Set(materials
+                    .filter(material => material.sae_number === selectedSAE)
+                    .map(material => material.condition))];
+
+                if (conditions.length > 0) {
+                    conditions.forEach(condition => {
+                        const option = document.createElement('option');
+                        option.value = condition;
+                        option.textContent = condition;
+                        conditionSelect.appendChild(option);
+                    });
+                    conditionSelect.disabled = false; // Enable condition select
+                }
 
                 displayMaterialInfo(); // Update display after populating conditions
             });

@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-    color: #ff00ff;
+    color: #ff00ff !important; /* Añadimos !important para asegurar que el estilo se aplique */
 }
 
 label {
@@ -13,10 +13,24 @@ label {
     margin: 5px 0;
 }
 
-input {
+input, select {
     margin: 5px 0;
 }
 
 button {
     margin: 10px 0;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+    }
+
+    label {
+        width: auto;
+        display: block;
+    }
 }

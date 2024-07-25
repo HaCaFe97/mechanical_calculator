@@ -4,33 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Material Selector</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        select, div {
-            margin-bottom: 20px;
-        }
-        .navigation-buttons {
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>Material Selector</h1>
         <label for="sae-select">Select SAE Number:</label>
-        <select id="sae-select">
+        <select id="sae-select" class="form-control">
             <option value="">--Select an Option--</option>
         </select>
         
         <label for="condition-select">Select Condition:</label>
-        <select id="condition-select" disabled>
+        <select id="condition-select" class="form-control" disabled>
             <option value="">--Select an Option--</option>
         </select>
         
