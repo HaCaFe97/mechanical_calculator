@@ -3,28 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Material Selector</title>
+    <title>Macaifer DTE</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Material Selector</h1>
-        <label for="sae-select">Select SAE Number:</label>
-        <select id="sae-select" class="form-control">
-            <option value="">--Select an Option--</option>
-        </select>
-        
-        <label for="condition-select">Select Condition:</label>
-        <select id="condition-select" class="form-control" disabled>
-            <option value="">--Select an Option--</option>
-        </select>
-        
-        <div id="material-info">
-            <!-- Material information will be displayed here -->
+    <header>
+        <h1>Macaifer DTE</h1>
+        <div class="language-buttons">
+            <button id="btn-en">English</button>
+            <button id="btn-es">Español</button>
+        </div>
+    </header>
+
+    <h2>Mechanical Stress and Deformation Calculator</h2>
+
+    <div class="tab-container">
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab(event, 'tab1')">Stress and Deformation due Direct Axial Load</button>
+            <button class="tab-button" onclick="openTab(event, 'tab2')">Tab 2</button>
+            <button class="tab-button" onclick="openTab(event, 'tab3')">Tab 3</button>
+            <button class="tab-button" onclick="openTab(event, 'tab4')">Tab 4</button>
+        </div>
+        <div id="tab1" class="tab-content">
+            <div class="dropdowns">
+                <select id="sae_number">
+                    <option value="">Select SAE Number</option>
+                </select>
+                <select id="condition">
+                    <option value="">Select Condition</option>
+                </select>
+            </div>
+            <div id="material-properties">
+                <!-- Material properties will be shown here -->
+            </div>
+        </div>
+        <div id="tab2" class="tab-content" style="display:none;">
+            <p>Esta es la pestaña 2</p>
+        </div>
+        <div id="tab3" class="tab-content" style="display:none;">
+            <p>Esta es la pestaña 3</p>
+        </div>
+        <div id="tab4" class="tab-content" style="display:none;">
+            <p>Esta es la pestaña 4</p>
         </div>
     </div>
 
-    <!-- Link to the external JavaScript file -->
+    <div class="reference">
+        <p>Reference: Robert L. Mott, <i>Machine Elements in Mechanical Design</i> - 6th ed. - Pearson, 2017.</p>
+    </div>
+
+    <footer>
+        <p>© 2024 Macaifer DTE. Todos los derechos reservados.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

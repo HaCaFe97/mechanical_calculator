@@ -1,36 +1,116 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
 }
 
 h1 {
-    color: #ff00ff !important; /* Añadimos !important para asegurar que el estilo se aplique */
+    margin: 0;
 }
 
-label {
-    display: inline-block;
-    width: 120px;
-    margin: 5px 0;
-}
-
-input, select {
-    margin: 5px 0;
+.language-buttons {
+    display: flex;
+    gap: 10px;
 }
 
 button {
-    margin: 10px 0;
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
-/* Responsive design */
-@media (max-width: 600px) {
-    .container {
-        width: 100%;
-        margin: 0;
-        padding: 10px;
-    }
+button:hover {
+    background-color: #777;
+}
 
-    label {
-        width: auto;
-        display: block;
-    }
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.tab-container {
+    width: 100%;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.tab-button:hover {
+    background-color: #777;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.tab-content p {
+    margin: 0;
+}
+
+.reference {
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+footer {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.dropdown-container label {
+    margin-bottom: 5px;
+}
+
+.dropdown-container select {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#material-properties {
+    margin-top: 20px;
 }

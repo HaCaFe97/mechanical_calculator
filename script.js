@@ -1,78 +1,78 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const saeSelect = document.getElementById('sae-select');
-    const conditionSelect = document.getElementById('condition-select');
-    const infoDiv = document.getElementById('material-info');
-
-    // Fetch JSON data
-    fetch('carbon_and_alloy_steels.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            const materials = data.carbon_and_alloy_steels;
-
-            // Populate SAE select
-            const saeNumbers = [...new Set(materials.map(material => material.sae_number))];
-            saeNumbers.forEach(sae => {
-                const option = document.createElement('option');
-                option.value = sae;
-                option.textContent = sae;
-                saeSelect.appendChild(option);
-            });
-
-            // Populate condition select based on selected SAE number
-            saeSelect.addEventListener('change', function() {
-                const selectedSAE = this.value;
-                conditionSelect.innerHTML = ''; // Clear previous options
-                conditionSelect.disabled = true; // Disable condition select by default
-
-                const conditions = [...new Set(materials
-                    .filter(material => material.sae_number === selectedSAE)
-                    .map(material => material.condition))];
-
-                if (conditions.length > 0) {
-                    conditions.forEach(condition => {
-                        const option = document.createElement('option');
-                        option.value = condition;
-                        option.textContent = condition;
-                        conditionSelect.appendChild(option);
-                    });
-                    conditionSelect.disabled = false; // Enable condition select
-                }
-
-                displayMaterialInfo(); // Update display after populating conditions
-            });
-
-            // Handle condition selection
-            conditionSelect.addEventListener('change', displayMaterialInfo);
-
-            function displayMaterialInfo() {
-                const selectedSAE = saeSelect.value;
-                const selectedCondition = conditionSelect.value;
-                const selectedMaterial = materials.find(material => material.sae_number === selectedSAE && material.condition === selectedCondition);
-
-                if (selectedMaterial) {
-                    infoDiv.innerHTML = `
-                        <h2>Material Information</h2>
-                        <p><strong>SAE Number:</strong> ${selectedMaterial.sae_number}</p>
-                        <p><strong>Condition:</strong> ${selectedMaterial.condition}</p>
-                        <p><strong>Tensile Strength (ksi):</strong> ${selectedMaterial.tensile_strength.ksi}</p>
-                        <p><strong>Tensile Strength (MPa):</strong> ${selectedMaterial.tensile_strength.mpa}</p>
-                        <p><strong>Yield Strength (ksi):</strong> ${selectedMaterial.yield_strength.ksi}</p>
-                        <p><strong>Yield Strength (MPa):</strong> ${selectedMaterial.yield_strength.mpa}</p>
-                        <p><strong>Ductility (% Elongation in 2 in):</strong> ${selectedMaterial.ductility_percent_elongation_2in}</p>
-                        <p><strong>Brinell Hardness (HB):</strong> ${selectedMaterial.brinell_hardness_hb}</p>
-                    `;
-                } else {
-                    infoDiv.innerHTML = '';
-                }
-            }
-
-            // Initial population of SAE select
-            saeSelect.dispatchEvent(new Event('change'));
-        })
-        .catch(error => console.error('Error loading JSON:', error));
+document.addEventListener('DOMContentLoaded', () => {
+    populateSAENumbers();
+    document.getElementById("sae_number").addEventListener("change", updateConditions);
+    document.getElementById("condition").addEventListener("change", showMaterialProperties);
 });
+
+let materials = { carbon_and_alloy_steels: [] };
+
+function populateSAENumbers() {
+    fetch('carbon_and_alloy_steels.json')
+        .then(response => response.json())
+        .then(data => {
+            materials = data;
+            const saeNumberDropdown = document.getElementById("sae_number");
+            const saeNumbers = [...new Set(materials.carbon_and_alloy_steels.map(material => material.sae_number))];
+
+            saeNumbers.forEach(sae_number => {
+                const option = document.createElement("option");
+                option.value = sae_number;
+                option.textContent = sae_number;
+                saeNumberDropdown.appendChild(option);
+            });
+        });
+}
+
+function updateConditions() {
+    const conditionDropdown = document.getElementById("condition");
+    conditionDropdown.innerHTML = '';
+
+    const selectedSAENumber = document.getElementById("sae_number").value;
+    const conditions = materials.carbon_and_alloy_steels
+        .filter(material => material.sae_number === selectedSAENumber)
+        .map(material => material.condition);
+
+    conditions.forEach(condition => {
+        const option = document.createElement("option");
+        option.value = condition;
+        option.textContent = condition;
+        conditionDropdown.appendChild(option);
+    });
+
+    showMaterialProperties();
+}
+
+function showMaterialProperties() {
+    const selectedSAENumber = document.getElementById("sae_number").value;
+    const selectedCondition = document.getElementById("condition").value;
+    const material = materials.carbon_and_alloy_steels.find(
+        material => material.sae_number === selectedSAENumber && material.condition === selectedCondition
+    );
+
+    const materialPropertiesDiv = document.getElementById("material-properties");
+    materialPropertiesDiv.innerHTML = material ? `
+        <h3>Material Properties</h3>
+        <p><strong>Tensile Strength:</strong> ${material.tensile_strength.ksi} ksi | ${material.tensile_strength.mpa} MPa</p>
+        <p><strong>Yield Strength:</strong> ${material.yield_strength.ksi} ksi | ${material.yield_strength.mpa} MPa</p>
+        <p><strong>Ductility (2 in):</strong> ${material.ductility_percent_elongation_2in}%</p>
+        <p><strong>Brinell Hardness:</strong> ${material.brinell_hardness_hb} HB</p>
+    ` : `<p>No data available for selected material.</p>`;
+}
+
+function openTab(event, tabId) {
+    const tabContents = document.querySelectorAll(".tab-content");
+    tabContents.forEach(tabContent => {
+        tabContent.style.display = "none";
+    });
+
+    const tabButtons = document.querySelectorAll(".tab-button");
+    tabButtons.forEach(tabButton => {
+        tabButton.classList.remove("active");
+    });
+
+    document.getElementById(tabId).style.display = "block";
+    event.currentTarget.classList.add("active");
+}
+
+// Set default tab
+document.querySelector(".tab-button").click();
