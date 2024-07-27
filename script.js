@@ -81,10 +81,10 @@ function showMaterialProperties() {
     materialPropertiesDiv.innerHTML = `
         <h3>Material Properties</h3>
         ${material ? `
-            <p><strong>Tensile Strength:</strong> ${material.tensile_strength.ksi} ksi | ${material.tensile_strength.mpa} MPa</p>
-            <p><strong>Yield Strength:</strong> ${material.yield_strength.ksi} ksi | ${material.yield_strength.mpa} MPa</p>
-            <p><strong>Ductility (2 in):</strong> ${material.ductility_percent_elongation_2in}%</p>
-            <p><strong>Brinell Hardness:</strong> ${material.brinell_hardness_hb} HB</p>
+            <p><strong>Tensile Strength:</strong><br> ${material.tensile_strength.ksi} ksi | ${material.tensile_strength.mpa} MPa</p>
+            <p><strong>Yield Strength:</strong><br> ${material.yield_strength.ksi} ksi | ${material.yield_strength.mpa} MPa</p>
+            <p><strong>Ductility (2 in):</strong><br> ${material.ductility_percent_elongation_2in}%</p>
+            <p><strong>Brinell Hardness:</strong><br> ${material.brinell_hardness_hb} HB</p>
         ` : `<p>No data available for selected material.</p>`}`;
 }
 
@@ -93,11 +93,11 @@ function showCommonProperties() {
     commonPropertiesDiv.style.display = 'block';
     commonPropertiesDiv.innerHTML = `
         <h3>Properties common to all carbon and alloy steels</h3>
-        <p><strong>Poisson's ratio:</strong> 0.27</p>
-        <p><strong>Shear modulus:</strong> 11.5 x 10<sup>6</sup> psi | 80 GPa</p>
-        <p><strong>Coefficient of thermal expansion:</strong> 6.5 x 10<sup>-6</sup> °F<sup>-1</sup></p>
-        <p><strong>Density:</strong> 0.283 lb/in<sup>3</sup> | 7680 kg/m<sup>3</sup></p>
-        <p><strong>Modulus of elasticity:</strong> 30 x 10<sup>6</sup> psi | 207 GPa</p>
+        <p><strong>Poisson's ratio:</strong><br> 0.27</p>
+        <p><strong>Shear modulus:</strong><br> 11.5 x 10<sup>6</sup> psi | 80 GPa</p>
+        <p><strong>Coefficient of thermal expansion:</strong><br> 6.5 x 10<sup>-6</sup> °F<sup>-1</sup></p>
+        <p><strong>Density:</strong><br> 0.283 lb/in<sup>3</sup> | 7680 kg/m<sup>3</sup></p>
+        <p><strong>Modulus of elasticity:</strong><br> 30 x 10<sup>6</sup> psi | 207 GPa</p>
     `;
 }
 
