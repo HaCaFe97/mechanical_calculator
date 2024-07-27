@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("material_type").addEventListener("change", populateSAENumbers);
     document.getElementById("sae_number").addEventListener("change", updateConditions);
     document.getElementById("condition").addEventListener("change", showMaterialProperties);
+    document.getElementById("common-properties").style.display = 'none'; // Ocultar propiedades comunes al inicio
 });
 
 let materials = { carbon_and_alloy_steels: [] };
@@ -42,6 +43,8 @@ function populateSAENumbers() {
             });
             if (materialType === "carbon_and_alloy_steels") {
                 showCommonProperties();
+            } else {
+                document.getElementById("common-properties").style.display = 'none';
             }
         });
 }
@@ -91,10 +94,10 @@ function showCommonProperties() {
     commonPropertiesDiv.innerHTML = `
         <h3>Properties common to all carbon and alloy steels</h3>
         <p><strong>Poisson's ratio:</strong> 0.27</p>
-        <p><strong>Shear modulus:</strong> 11.5 x 10^6 psi | 80 GPa</p>
-        <p><strong>Coefficient of thermal expansion:</strong> 6.5 x 10^-6 °F^-1</p>
-        <p><strong>Density:</strong> 0.283 lb/in^3 | 7680 kg/m^3</p>
-        <p><strong>Modulus of elasticity:</strong> 30 x 10^6 psi | 207 GPa</p>
+        <p><strong>Shear modulus:</strong> 11.5 x 10<sup>6</sup> psi | 80 GPa</p>
+        <p><strong>Coefficient of thermal expansion:</strong> 6.5 x 10<sup>-6</sup> °F<sup>-1</sup></p>
+        <p><strong>Density:</strong> 0.283 lb/in<sup>3</sup> | 7680 kg/m<sup>3</sup></p>
+        <p><strong>Modulus of elasticity:</strong> 30 x 10<sup>6</sup> psi | 207 GPa</p>
     `;
 }
 
