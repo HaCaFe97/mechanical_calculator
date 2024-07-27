@@ -8,15 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
 let materials = { carbon_and_alloy_steels: [] };
 
 function populateMaterialTypes() {
-    // Clear previous options and add default option
     const materialTypeDropdown = document.getElementById("material_type");
     materialTypeDropdown.innerHTML = '<option value="">Select Material Type</option>';
-
-    // Future material types can be added here
     const materialTypes = [
         { value: "carbon_and_alloy_steels", text: "Carbon and Alloy Steels" }
     ];
-
     materialTypes.forEach(type => {
         const option = document.createElement("option");
         option.value = type.value;
@@ -28,22 +24,25 @@ function populateMaterialTypes() {
 function populateSAENumbers() {
     const saeNumberDropdown = document.getElementById("sae_number");
     const materialType = document.getElementById("material_type").value;
-
-    saeNumberDropdown.innerHTML = '<option value="">Select SAE Number</option>'; // Clear previous options
-    if (!materialType) return;
-
+    saeNumberDropdown.innerHTML = '<option value="">Select SAE Number</option>';
+    if (!materialType) {
+        document.getElementById("common-properties").style.display = 'none';
+        return;
+    }
     fetch(`${materialType}.json`)
         .then(response => response.json())
         .then(data => {
             materials = data;
             const saeNumbers = [...new Set(materials[materialType].map(material => material.sae_number))];
-
             saeNumbers.forEach(sae_number => {
                 const option = document.createElement("option");
                 option.value = sae_number;
                 option.textContent = sae_number;
                 saeNumberDropdown.appendChild(option);
             });
+            if (materialType === "carbon_and_alloy_steels") {
+                showCommonProperties();
+            }
         });
 }
 
@@ -51,23 +50,19 @@ function updateConditions() {
     const conditionDropdown = document.getElementById("condition");
     const materialType = document.getElementById("material_type").value;
     const selectedSAENumber = document.getElementById("sae_number").value;
-
-    conditionDropdown.innerHTML = '<option value="">Select Condition</option>'; // Clear previous options
-
-    if (!selectedSAENumber) return;
-
-    const conditions = materials[materialType]
+    conditionDropdown.innerHTML = '<option value="">Select Condition</option>';
+    if (!selectedSAENumber) {
+        return;
+    }
+    const conditions = [...new Set(materials[materialType]
         .filter(material => material.sae_number === selectedSAENumber)
-        .map(material => material.condition);
-
+        .map(material => material.condition))];
     conditions.forEach(condition => {
         const option = document.createElement("option");
         option.value = condition;
         option.textContent = condition;
         conditionDropdown.appendChild(option);
     });
-
-    showMaterialProperties();
 }
 
 function showMaterialProperties() {
@@ -80,15 +75,26 @@ function showMaterialProperties() {
     );
 
     const materialPropertiesDiv = document.getElementById("material-properties");
-    materialPropertiesDiv.innerHTML = material ? `
+    materialPropertiesDiv.innerHTML = `
         <h3>Material Properties</h3>
-        <p><strong>Tensile Strength:</strong> ${material.tensile_strength.ksi} ksi | ${material.tensile_strength.mpa} MPa</p>
-        <p><strong>Yield Strength:</strong> ${material.yield_strength.ksi} ksi | ${material.yield_strength.mpa} MPa</p>
-        <p><strong>Ductility (2 in):</strong> ${material.ductility_percent_elongation_2in}%</p>
-        <p><strong>Brinell Hardness:</strong> ${material.brinell_hardness_hb} HB</p>
-    ` : `
-        <h3>Material Properties</h3>
-        <p>No data available for selected material.</p>
+        ${material ? `
+            <p><strong>Tensile Strength:</strong> ${material.tensile_strength.ksi} ksi | ${material.tensile_strength.mpa} MPa</p>
+            <p><strong>Yield Strength:</strong> ${material.yield_strength.ksi} ksi | ${material.yield_strength.mpa}</p>
+            <p><strong>Ductility (2 in):</strong> ${material.ductility_percent_elongation_2in}%</p>
+            <p><strong>Brinell Hardness:</strong> ${material.brinell_hardness_hb} HB</p>
+        ` : `<p>No data available for selected material.</p>`}`;
+}
+
+function showCommonProperties() {
+    const commonPropertiesDiv = document.getElementById("common-properties");
+    commonPropertiesDiv.style.display = 'block';
+    commonPropertiesDiv.innerHTML = `
+        <h3>Properties common to all carbon and alloy steels</h3>
+        <p><strong>Poisson's ratio:</strong> 0.27</p>
+        <p><strong>Shear modulus:</strong> 11.5 x 10^6 psi | 80 GPa</p>
+        <p><strong>Coefficient of thermal expansion:</strong> 6.5 x 10^-6 °F^-1</p>
+        <p><strong>Density:</strong> 0.283 lb/in^3 | 7680 kg/m^3</p>
+        <p><strong>Modulus of elasticity:</strong> 30 x 10^6 psi | 207 GPa</p>
     `;
 }
 

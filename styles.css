@@ -95,17 +95,39 @@ h3 {
 
 footer {
     text-align: center;
-    padding:20px;
+    padding: 20px;
     background-color: #333;
     color: white;
     margin-top: auto;
 }
 
+.material-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.material-selection {
+    text-align: center;
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.dropdowns {
+    display: flex;
+    flex-direction: column;
+}
+
 .dropdown {
     margin-bottom: 20px;
-    text-align: left;
 }
 
 #material-properties {
-    text-align: left;
+    text-align: center;
+}
+
+.common-properties {
+    text-align: center;
+    padding: 00px; /* Match the padding with material selection section */
+    background-color: #f9f9f9; /* Match the background color */
+    margin-left: 20px; /* Adjust the margin as needed */
 }

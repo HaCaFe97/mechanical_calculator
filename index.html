@@ -25,30 +25,41 @@
             <button class="tab-button" onclick="openTab(event, 'tab4')">Tab 4</button>
         </div>
         <div id="tab1" class="tab-content">
-            <h3>Material Selector</h3>
-            <div class="dropdowns">
-                <div class="dropdown">
-                    <select id="material_type">
-                        <option value="">Select Material Type</option>
-                        <option value="carbon_and_alloy_steels">Carbon and Alloy Steels</option>
-                        <!-- Future materials can be added here -->
-                    </select>
+            <div class="material-container">
+                <div class="material-selection">
+                    <h3>Material Selector</h3>
+                    <div class="dropdowns">
+                        <div class="dropdown">
+                            <select id="material_type">
+                                <option value="">Select Material Type</option>
+                                <option value="carbon_and_alloy_steels">Carbon and Alloy Steels</option>
+                                <!-- Future materials can be added here -->
+                            </select>
+                        </div>
+                        <div class="dropdown">
+                            <select id="sae_number">
+                                <option value="">Select SAE Number</option>
+                            </select>
+                        </div>
+                        <div class="dropdown">
+                            <select id="condition">
+                                <option value="">Select Condition</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="material-properties">
+                        <h3>Material Properties</h3>
+                        <p>Select a material to see its properties.</p>
+                    </div>
                 </div>
-                <div class="dropdown">
-                    <select id="sae_number">
-                        <option value="">Select SAE Number</option>
-                    </select>
+                <div id="common-properties" class="common-properties">
+                    <h3>Properties common to all carbon and alloy steels</h3>
+                    <p><strong>Poisson's ratio:</strong> 0.27</p>
+                    <p><strong>Shear modulus:</strong> 11.5 x 10<sup>6</sup> psi | 80 GPa</p>
+                    <p><strong>Coefficient of thermal expansion:</strong> 6.5 x 10<sup>-6</sup> °F<sup>-1</sup></p>
+                    <p><strong>Density:</strong> 0.283 lb/in<sup>3</sup> | 7680 kg/m<sup>3</sup></p>
+                    <p><strong>Modulus of elasticity:</strong> 30 x 10<sup>6</sup> psi | 207 GPa</p>
                 </div>
-                <div class="dropdown">
-                    <select id="condition">
-                        <option value="">Select Condition</option>
-                    </select>
-                </div>
-            </div>
-            <div id="material-properties">
-                <h3>Material Properties</h3>
-                <p>Select a material to see its properties.</p>
-                <!-- Material properties will be shown here -->
             </div>
         </div>
         <div id="tab2" class="tab-content" style="display:none;">
