@@ -82,7 +82,7 @@ function showMaterialProperties() {
         <h3>Material Properties</h3>
         ${material ? `
             <p><strong>Tensile Strength:</strong> ${material.tensile_strength.ksi} ksi | ${material.tensile_strength.mpa} MPa</p>
-            <p><strong>Yield Strength:</strong> ${material.yield_strength.ksi} ksi | ${material.yield_strength.mpa}</p>
+            <p><strong>Yield Strength:</strong> ${material.yield_strength.ksi} ksi | ${material.yield_strength.mpa} MPa</p>
             <p><strong>Ductility (2 in):</strong> ${material.ductility_percent_elongation_2in}%</p>
             <p><strong>Brinell Hardness:</strong> ${material.brinell_hardness_hb} HB</p>
         ` : `<p>No data available for selected material.</p>`}`;
