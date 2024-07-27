@@ -25,15 +25,29 @@
             <button class="tab-button" onclick="openTab(event, 'tab4')">Tab 4</button>
         </div>
         <div id="tab1" class="tab-content">
+            <h3>Material Selector</h3>
             <div class="dropdowns">
-                <select id="sae_number">
-                    <option value="">Select SAE Number</option>
-                </select>
-                <select id="condition">
-                    <option value="">Select Condition</option>
-                </select>
+                <div class="dropdown">
+                    <select id="material_type">
+                        <option value="">Select Material Type</option>
+                        <option value="carbon_and_alloy_steels">Carbon and Alloy Steels</option>
+                        <!-- Future materials can be added here -->
+                    </select>
+                </div>
+                <div class="dropdown">
+                    <select id="sae_number">
+                        <option value="">Select SAE Number</option>
+                    </select>
+                </div>
+                <div class="dropdown">
+                    <select id="condition">
+                        <option value="">Select Condition</option>
+                    </select>
+                </div>
             </div>
             <div id="material-properties">
+                <h3>Material Properties</h3>
+                <p>Select a material to see its properties.</p>
                 <!-- Material properties will be shown here -->
             </div>
         </div>
