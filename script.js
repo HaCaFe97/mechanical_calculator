@@ -132,5 +132,88 @@ function openTab(event, tabId) {
     event.currentTarget.classList.add("active");
 }
 
+// script.js
+
+document.getElementById('unit-system').addEventListener('change', updateUnits);
+document.getElementById('sub-unit-system').addEventListener('change', updateSubUnits);
+
+function updateUnits() {
+    const unitSystem = document.getElementById('unit-system').value;
+    const subUnitSystem = document.getElementById('sub-unit-system');
+    const forceUnit = document.getElementById('force-unit');
+    const areaUnit = document.getElementById('area-unit');
+
+    if (unitSystem === 'imperial') {
+        subUnitSystem.innerHTML = `
+            <option value="lbf/in^2">lbf/in²</option>
+            <option value="kips/in^2">kips/in²</option>
+        `;
+        forceUnit.textContent = 'lbf';
+        areaUnit.textContent = 'in²';
+    } else {
+        subUnitSystem.innerHTML = `
+            <option value="N/m^2">N/m²</option>
+            <option value="N/mm^2">N/mm²</option>
+        `;
+        forceUnit.textContent = 'N';
+        areaUnit.textContent = 'm²';
+    }
+    updateSubUnits();
+}
+
+function updateSubUnits() {
+    const subUnitSystem = document.getElementById('sub-unit-system').value;
+    const forceUnit = document.getElementById('force-unit');
+    const areaUnit = document.getElementById('area-unit');
+    
+    if (subUnitSystem === 'lbf/in^2') {
+        forceUnit.textContent = 'lbf';
+        areaUnit.textContent = 'in²';
+    } else if (subUnitSystem === 'kips/in^2') {
+        forceUnit.textContent = 'kips';
+        areaUnit.textContent = 'in²';
+    } else if (subUnitSystem === 'N/m^2') {
+        forceUnit.textContent = 'N';
+        areaUnit.textContent = 'm²';
+    } else if (subUnitSystem === 'N/mm^2') {
+        forceUnit.textContent = 'N';
+        areaUnit.textContent = 'mm²';
+    }
+}
+
+function calculateStress() {
+    const force = parseFloat(document.getElementById('force').value);
+    const area = parseFloat(document.getElementById('area').value);
+    const subUnitSystem = document.getElementById('sub-unit-system').value;
+
+    if (!isNaN(force) && !isNaN(area) && area > 0) {
+        let stress = force / area;
+        let unitLabel = subUnitSystem;
+
+        // Convert stress to appropriate sub-unit
+        if (subUnitSystem === 'kips/in^2') {
+            stress ; // 1 kip = 1000 lbf
+            unitLabel = 'ksi';
+        } else if (subUnitSystem === 'N/mm^2') {
+            stress ; // 1 N/mm² = 1e6 N/m²
+            unitLabel = 'MPa';
+        } else if (subUnitSystem === 'N/m^2') {
+            unitLabel = 'Pa';
+        } else if (subUnitSystem === 'lbf/in^2') {
+            unitLabel = 'psi';
+        }
+
+        document.getElementById('stress-result').textContent = `Stress: ${stress.toFixed(2)} ${unitLabel}`;
+    } else {
+        document.getElementById('stress-result').textContent = 'Stress: Invalid input';
+    }
+}
+
+// Inicializar unidades
+updateUnits();
+
+
+
+
 // Set default tab
 document.querySelector(".tab-button").click();

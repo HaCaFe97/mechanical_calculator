@@ -142,3 +142,69 @@ footer {
     background-color: #f9f9f9; /* Match the background color */
     margin-left: 20px; /* Adjust the margin as needed */
 }
+
+/* Agregar estilos para la sección de cálculos */
+.calculation-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-left: 20px; /* Ajustar el margen según sea necesario */
+}
+
+.unit-selector {
+    margin-bottom: 20px;
+}
+
+.calculation-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calculation-inputs label,
+.calculation-inputs input {
+    margin: 5px 0;
+}
+
+#calculation-results {
+    margin-top: 20px;
+}
+
+.calculation-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-left: 20px; /* Ajustar el margen según sea necesario */
+}
+
+.unit-selector,
+.unit-sub-selector {
+    margin-bottom: 20px;
+}
+
+.calculation-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.calculation-inputs label {
+    margin-right: 10px;
+}
+
+.calculation-inputs input {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.calculation-inputs span {
+    margin-left: -10px;
+    margin-bottom: 10px;
+}
+
+#calculation-results {
+    margin-top: 20px;
+}
+

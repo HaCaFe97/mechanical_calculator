@@ -64,6 +64,40 @@
                     <p><strong>Density:</strong> 0.283 lb/in^3 | 7680 kg/m^3</p>
                     <p><strong>Modulus of elasticity:</strong> 30 x 10^6 psi | 207 GPa</p>
                 </div>
+                <!-- Nueva sección de cálculos -->
+                <div class="calculation-section">
+                    <h3>Calculations</h3>
+                    <div class="unit-selector">
+                        <label for="unit-system">Select Unit System:</label>
+                        <select id="unit-system" onchange="updateSubUnits()">
+                            <option value="imperial">Imperial</option>
+                            <option value="metric">Metric</option>
+                        </select>
+                    </div>
+                    <div class="unit-sub-selector">
+                        <label for="sub-unit-system">Select Sub-Unit:</label>
+                        <select id="sub-unit-system">
+                            <option value="lbf/in^2">lbf/in²</option>
+                            <option value="kips/in^2">kips/in²</option>
+                            <option value="N/m^2">N/m²</option>
+                            <option value="N/mm^2">N/mm²</option>
+                        </select>
+                    </div>
+                    <div class="calculation-inputs">
+                        <label for="force">Force:</label>
+                        <input type="number" id="force" placeholder="Enter force">
+                        <span id="force-unit">lbf</span>
+
+                        <label for="area">Cross-sectional Area:</label>
+                        <input type="number" id="area" placeholder="Enter area">
+                        <span id="area-unit">in²</span>
+                    </div>
+                    <button onclick="calculateStress()">Calculate Stress</button>
+                    <div id="calculation-results">
+                        <h4>Results</h4>
+                        <p id="stress-result">Stress: N/A</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="tab2" class="tab-content" style="display:none;">
