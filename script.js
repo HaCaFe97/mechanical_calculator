@@ -1,8 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
     populateMaterialTypes();
-    document.getElementById("material_type").addEventListener("change", populateSAENumbers);
-    document.getElementById("sae_number").addEventListener("change", updateConditions);
-    document.getElementById("condition").addEventListener("change", showMaterialProperties);
+    document.getElementById("material_type").addEventListener("change", () => {
+        clearMaterialProperties();
+        populateSAENumbers();
+    });
+    document.getElementById("sae_number").addEventListener("change", () => {
+        clearMaterialProperties();
+        updateConditions();
+    });
+    document.getElementById("condition").addEventListener("change", () => {
+        clearMaterialProperties();
+        showMaterialProperties();
+    });
     document.getElementById("common-properties").style.display = 'none'; // Ocultar propiedades comunes al inicio
 });
 
@@ -98,6 +107,13 @@ function showCommonProperties() {
         <p><strong>Coefficient of thermal expansion:</strong><br> 6.5 x 10<sup>-6</sup> °F<sup>-1</sup></p>
         <p><strong>Density:</strong><br> 0.283 lb/in<sup>3</sup> | 7680 kg/m<sup>3</sup></p>
         <p><strong>Modulus of elasticity:</strong><br> 30 x 10<sup>6</sup> psi | 207 GPa</p>
+    `;
+}
+
+function clearMaterialProperties() {
+    document.getElementById("material-properties").innerHTML = `
+        <h3>Material Properties</h3>
+        <p>Select a material to see its properties.</p>
     `;
 }
 

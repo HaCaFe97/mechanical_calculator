@@ -16,6 +16,17 @@ header {
     color: white;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px; /* Ajusta el tamaño según sea necesario */
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
 h1 {
     margin: 0;
 }
@@ -127,7 +138,7 @@ footer {
 
 .common-properties {
     text-align: center;
-    padding: 00px; /* Match the padding with material selection section */
+    padding: 0; /* Match the padding with material selection section */
     background-color: #f9f9f9; /* Match the background color */
     margin-left: 20px; /* Adjust the margin as needed */
 }
